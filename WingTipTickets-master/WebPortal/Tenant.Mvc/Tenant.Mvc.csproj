@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1203F08-AAEE-4DEC-9461-41BF0C4FEB69}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tenant.Mvc</RootNamespace>
+    <AssemblyName>Tenant.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>cb944b98</NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hyak.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Hyak.Common.1.0.2\lib\net45\Hyak.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Azure.Common.2.0.4\lib\net45\Microsoft.Azure.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Common.NetFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Azure.Common.2.0.4\lib\net45\Microsoft.Azure.Common.NetFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=1.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.DocumentDB.1.9.5\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Search, Version=0.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Azure.Search.0.11.0-preview\lib\net40\Microsoft.Azure.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.SqlDatabase.ElasticScale.Client, Version=0.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Azure.SqlDatabase.ElasticScale.Client.0.8.0\lib\net45\Microsoft.Azure.SqlDatabase.ElasticScale.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.21.301221612\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.21.301221612\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.0\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.3.0.1\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.PowerBI.Api, Version=1.1.5.17022, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.PowerBI.Api.1.1.5\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\Microsoft.PowerBI.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.PowerBI.AspNet.Mvc, Version=1.1.5.17022, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.PowerBI.AspNet.Mvc.1.1.5\lib\net45\Microsoft.PowerBI.AspNet.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.PowerBI.Core, Version=1.1.5.17022, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.PowerBI.Core.1.1.5\lib\net45\Microsoft.PowerBI.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.0.1\lib\net45\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.ServiceBus.3.4.0\lib\net45-full\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=6.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Spatial.6.10.0\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.1\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5">
+      <HintPath>..\packages\Unity.Mvc5.1.1\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.PowerBI.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EventAdministrationController.cs" />
+    <Compile Include="Controllers\FindSeatsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Core\Contexts\AllSeatsContext.cs" />
+    <Compile Include="Core\Contexts\DiscountContext.cs" />
+    <Compile Include="Core\Contexts\SeatSectionContext.cs" />
+    <Compile Include="Core\Helpers\PowerBiHelper.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VenueController.cs" />
+    <Compile Include="Controllers\VersionController.cs" />
+    <Compile Include="Core\Contexts\ApplicationDefault.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\City.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\Concert.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\Customer.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\CustomerCreditCard.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\DatabaseContext.cs" />
+    <Compile Include="Core\Contexts\Organizer.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\Performer.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\SeatSection.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\SeatSectionLayout.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\State.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\sysdiagram.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\Ticket.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\TicketLevel.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\Venue.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\WebSiteActionLog.cs">
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\WingTipTicketEntities.cs" />
+    <Compile Include="Core\Contexts\WingTipTicketModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WingTipTicketModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\WingTipTicketModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WingTipTicketModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Contexts\WingTipTicketModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WingTipTicketModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Helpers\ConfigHelper.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IAllSeatsRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IApplicationDefaultsRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IBaseRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IDiscountRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\ISeatSectionRepository.cs" />
+    <Compile Include="Core\Models\AllSeatsModel.cs" />
+    <Compile Include="Core\Models\ApplicationDbContext.cs" />
+    <Compile Include="Core\Models\DiscountedSeatModel.cs" />
+    <Compile Include="Core\Models\DiscountModel.cs" />
+    <Compile Include="Core\Repositories\Tenant\AllSeatsRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\DiscountRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\FindSeatsRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\ApplicationDefaultsRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IFindSeatsRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\SeatSectionRepository.cs" />
+    <Compile Include="Models\EventAdministrationViewModel.cs" />
+    <Compile Include="Models\ReportsViewModel.cs" />
+    <Compile Include="Models\UploadFileViewModel.cs" />
+    <Compile Include="Models\VenueIndexViewModel.cs" />
+    <Compile Include="Models\CustomerEventsViewModel.cs" />
+    <Compile Include="Core\Models\PurchaseTicketsModel.cs" />
+    <Compile Include="Core\Helpers\SqlDataReaderExtensions.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IArtistRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\ICityRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IConcertRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\ICustomerRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\ITicketRepository.cs" />
+    <Compile Include="Core\Interfaces\Tenant\IVenueRepository.cs" />
+    <Compile Include="Models\ConcertListViewModel.cs" />
+    <Compile Include="Models\LookupViewModel.cs" />
+    <Compile Include="Core\Repositories\Tenant\ArtistRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\CityRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\ConcertRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\CustomerRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\TicketRepository.cs" />
+    <Compile Include="Core\Repositories\Tenant\VenueRepository.cs" />
+    <Compile Include="Core\Telemetry\ClickEvent.cs" />
+    <Compile Include="Core\Telemetry\PurchaseEvent.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Models\ConcertModel.cs" />
+    <Compile Include="Core\Contexts\ConcertContext.cs" />
+    <Compile Include="Core\Enums\MonthsEnum.cs" />
+    <Compile Include="Core\Models\ConcertSearchHit.cs" />
+    <Compile Include="Core\Contexts\ConcertTicketContext.cs" />
+    <Compile Include="Core\Enums\ServerTargetEnum.cs" />
+    <Compile Include="Core\Models\ConcertTicketLevel.cs" />
+    <Compile Include="Core\Models\PurchasedTicketModel.cs" />
+    <Compile Include="Core\Contexts\CustomerContext.cs" />
+    <Compile Include="Core\Models\CustomerModel.cs" />
+    <Compile Include="Core\Models\ConcertTicket.cs" />
+    <Compile Include="Core\Models\ConcertListModel.cs" />
+    <Compile Include="Core\Models\CustomerEventsModel.cs" />
+    <Compile Include="Core\Models\CatalogItem.cs" />
+    <Compile Include="Core\Models\CatalogItemDetailsModel.cs" />
+    <Compile Include="Core\Models\CatalogModel.cs" />
+    <Compile Include="Core\Models\EventHubs.cs" />
+    <Compile Include="Core\Models\ApplicationUser.cs" />
+    <Compile Include="Core\Helpers\DataHelper.cs" />
+    <Compile Include="Core\Models\Country.cs" />
+    <Compile Include="Core\Models\PerformerModel.cs" />
+    <Compile Include="Core\Models\VenueMetaData.cs" />
+    <Compile Include="Core\Models\SeatSectionModel.cs" />
+    <Compile Include="Core\Models\StateModel.cs" />
+    <Compile Include="Core\Contexts\VenuesContext.cs" />
+    <Compile Include="Core\Models\CityModel.cs" />
+    <Compile Include="Core\Models\VenueModel.cs" />
+    <Compile Include="Models\FindSeatsViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Models\CustomerRec.cs" />
+    <Compile Include="Core\Models\Product.cs" />
+    <Compile Include="Core\Models\Promotion.cs" />
+    <Compile Include="Core\Repositories\Tenant\BaseRepository.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\DocumentDB.Spatial.Sql.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\IOTSoundReaderEmulator.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\IOTSoundReaderEmulator.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\IOTSoundReaderEmulator.vshost.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.Azure.Documents.Client.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.Azure.Documents.Client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.Azure.Documents.ServiceInterop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.ServiceBus.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.ServiceBus.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.WindowsAzure.Configuration.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Microsoft.WindowsAzure.Configuration.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\Newtonsoft.Json.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\PlaceHolder.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\PlaceHolder.txt" />
+    <Content Include="Content\Img\Classical\arrows2.png" />
+    <Content Include="Content\Img\Classical\floor-plan-new.png" />
+    <Content Include="Content\Img\Classical\icon1.png" />
+    <Content Include="Content\Img\Classical\icon2.png" />
+    <Content Include="Content\Img\Classical\icon3.png" />
+    <Content Include="Content\Img\Classical\logo.png" />
+    <Content Include="Content\Img\Classical\search.png" />
+    <Content Include="Content\Img\Classical\venue.png" />
+    <Content Include="Content\Img\Pop\floor-plan-new.png" />
+    <Content Include="Content\Img\Rock\floor-plan-new.png" />
+    <Content Include="Content\Img\WingTipTickets\floor-plan-new.png" />
+    <Content Include="Content\Img\Pop\search.png" />
+    <Content Include="Content\Img\Rock\icon1.png" />
+    <Content Include="Content\Img\Rock\icon2.png" />
+    <Content Include="Content\Img\Rock\icon3.png" />
+    <Content Include="Content\Img\Rock\logo.png" />
+    <Content Include="Content\Img\Rock\search.png" />
+    <Content Include="Content\Stylesheets\powerbi.css" />
+    <Content Include="Content\Scripts\bootstrap-select.js" />
+    <Content Include="Content\Scripts\buy.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-ui.js" />
+    <Content Include="Content\Scripts\jquery.fileupload.js" />
+    <Content Include="Content\Scripts\jquery.ui.widget.js" />
+    <Content Include="Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Content\Scripts\respond.js" />
+    <Content Include="Content\Scripts\respond.min.js" />
+    <Content Include="Content\Scripts\jquery.ui-1.11.4.js" />
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\IOTSoundReaderEmulator.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\IOTSoundReaderEmulator.vshost.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\jobs\continuous\IOTSoundReaderEmulator\IOTSoundReaderEmulator.vshost.exe.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\Scripts\_references.js" />
+    <Content Include="Content\Stylesheets\bootstrap-select.css" />
+    <Content Include="Content\Stylesheets\jquery.fileupload.css" />
+    <Content Include="Content\Stylesheets\Recommendation.css" />
+    <Content Include="Content\Themes\Classical.css" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Fonts\segoeuil.svg" />
+    <Content Include="Content\Themes\Pop.css" />
+    <Content Include="Content\Themes\Rock.css" />
+    <Content Include="Content\Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Fonts\segoeuil.eot" />
+    <Content Include="Content\Fonts\segoeuil.ttf" />
+    <Content Include="Content\Fonts\segoeuil.woff" />
+    <Content Include="Content\Scripts\bootstrap.js" />
+    <Content Include="Content\Scripts\bootstrap.min.js" />
+    <None Include="Content\Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Content\Scripts\jquery-1.9.1.js" />
+    <Content Include="Content\Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery.validate.js" />
+    <Content Include="Content\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Stylesheets\bootstrap-theme.css" />
+    <Content Include="Content\Stylesheets\bootstrap-theme.min.css" />
+    <Content Include="Content\Stylesheets\bootstrap.css" />
+    <Content Include="Content\Stylesheets\bootstrap.min.css" />
+    <Content Include="Content\Stylesheets\Site.css" />
+    <Content Include="Core\Contexts\WingTipTicketModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WingTipTicketModel.edmx</DependentUpon>
+      <LastGenOutput>WingTipTicketModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Core\Contexts\WingTipTicketModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WingTipTicketModel.edmx</DependentUpon>
+      <LastGenOutput>WingTipTicketModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Img\Classical\arrow-whitebg.jpg" />
+    <Content Include="Content\Img\Classical\arrowdown.jpg" />
+    <Content Include="Content\Img\Classical\arrowup.jpg" />
+    <Content Include="Content\Img\Classical\cancel-off.png" />
+    <Content Include="Content\Img\Classical\cancel-on.png" />
+    <Content Include="Content\Img\Classical\down.png" />
+    <Content Include="Content\Img\Classical\dropbtn.jpg" />
+    <Content Include="Content\Img\Classical\dropbtn.png" />
+    <Content Include="Content\Img\Classical\floor-plan.jpg" />
+    <Content Include="Content\Img\Classical\icon-bargain.jpg" />
+    <Content Include="Content\Img\Classical\icon-eventsguide.jpg" />
+    <Content Include="Content\Img\Classical\icon-magnifier.jpg" />
+    <Content Include="Content\Img\Classical\icon-season.jpg" />
+    <Content Include="Content\Img\Classical\icon-sml-season.jpg" />
+    <Content Include="Content\Img\Classical\icon-user.png" />
+    <Content Include="Content\Img\Classical\mbanner-01.jpg" />
+    <Content Include="Content\Img\Classical\micon-magnifier.png" />
+    <Content Include="Content\Img\Classical\star-half.png" />
+    <Content Include="Content\Img\Classical\star-off.png" />
+    <Content Include="Content\Img\Classical\star-on.png" />
+    <Content Include="Content\Img\Classical\ticketmaestro-logo.jpg" />
+    <Content Include="Content\Img\Classical\up.png" />
+    <Content Include="Content\Img\Rock\arrow-whitebg.jpg" />
+    <Content Include="Content\Img\Rock\arrow.png" />
+    <Content Include="Content\Img\Rock\arrowdown.jpg" />
+    <Content Include="Content\Img\Rock\arrowup.jpg" />
+    <Content Include="Content\Img\Rock\banner-01.jpg" />
+    <Content Include="Content\Img\Rock\cancel-off.png" />
+    <Content Include="Content\Img\Rock\cancel-on.png" />
+    <Content Include="Content\Img\Rock\down.png" />
+    <Content Include="Content\Img\Rock\dropbtn.jpg" />
+    <Content Include="Content\Img\Rock\dropbtn.png" />
+    <Content Include="Content\Img\Rock\floor-plan.jpg" />
+    <Content Include="Content\Img\Rock\icon-bargain.jpg" />
+    <Content Include="Content\Img\Rock\icon-eventsguide.jpg" />
+    <Content Include="Content\Img\Rock\icon-magnifier.jpg" />
+    <Content Include="Content\Img\Rock\icon-season.jpg" />
+    <Content Include="Content\Img\Rock\icon-sml-season.jpg" />
+    <Content Include="Content\Img\Rock\icon-user.png" />
+    <Content Include="Content\Img\Rock\mbanner-01.jpg" />
+    <Content Include="Content\Img\Rock\micon-magnifier.png" />
+    <Content Include="Content\Img\Rock\star-half.png" />
+    <Content Include="Content\Img\Rock\star-off.png" />
+    <Content Include="Content\Img\Rock\star-on.png" />
+    <Content Include="Content\Img\Rock\ticketmaestro-logo.jpg" />
+    <Content Include="Content\Img\Rock\up.png" />
+    <Content Include="Content\Img\Classical\arrow.png" />
+    <Content Include="Content\Img\Classical\banner-01.jpg" />
+    <Content Include="Content\Img\Pop\arrow-whitebg.jpg" />
+    <Content Include="Content\Img\Pop\arrowdown.jpg" />
+    <Content Include="Content\Img\Pop\arrowup.jpg" />
+    <Content Include="Content\Img\Pop\banner-01.jpg" />
+    <Content Include="Content\Img\Pop\cancel-off.png" />
+    <Content Include="Content\Img\Pop\cancel-on.png" />
+    <Content Include="Content\Img\Pop\down.png" />
+    <Content Include="Content\Img\Pop\dropbtn.jpg" />
+    <Content Include="Content\Img\Pop\dropbtn.png" />
+    <Content Include="Content\Img\Pop\floor-plan.jpg" />
+    <Content Include="Content\Img\Pop\icon-bargain.jpg" />
+    <Content Include="Content\Img\Pop\icon-eventsguide.jpg" />
+    <Content Include="Content\Img\Pop\icon-magnifier.jpg" />
+    <Content Include="Content\Img\Pop\icon-season.jpg" />
+    <Content Include="Content\Img\Pop\icon-sml-season.jpg" />
+    <Content Include="Content\Img\Pop\icon-user.png" />
+    <Content Include="Content\Img\Pop\mbanner-01.jpg" />
+    <Content Include="Content\Img\Pop\micon-magnifier.png" />
+    <Content Include="Content\Img\Pop\star-half.png" />
+    <Content Include="Content\Img\Pop\star-off.png" />
+    <Content Include="Content\Img\Pop\star-on.png" />
+    <Content Include="Content\Img\Pop\ticketmaestro-logo.jpg" />
+    <Content Include="Content\Img\Pop\up.png" />
+    <Content Include="Content\Img\WingTipTickets\arrow-greybg.jpg" />
+    <Content Include="Content\Img\WingTipTickets\arrow-orangebg.jpg" />
+    <Content Include="Content\Img\WingTipTickets\arrow-whitebg.jpg" />
+    <Content Include="Content\Img\WingTipTickets\arrowdown.jpg" />
+    <Content Include="Content\Img\WingTipTickets\arrowdowngrey.jpg" />
+    <Content Include="Content\Img\WingTipTickets\arrowup.jpg" />
+    <Content Include="Content\Img\WingTipTickets\arrowupgrey.jpg" />
+    <Content Include="Content\Img\WingTipTickets\banner-01.jpg" />
+    <Content Include="Content\Img\WingTipTickets\cancel-off.png" />
+    <Content Include="Content\Img\WingTipTickets\cancel-on.png" />
+    <Content Include="Content\Img\WingTipTickets\down.png" />
+    <Content Include="Content\Img\WingTipTickets\dropbtn.jpg" />
+    <Content Include="Content\Img\WingTipTickets\dropbtn.png" />
+    <Content Include="Content\Img\WingTipTickets\favicon.png" />
+    <Content Include="Content\Img\WingTipTickets\flogo.jpg" />
+    <Content Include="Content\Img\WingTipTickets\floor-plan.jpg" />
+    <Content Include="Content\Img\WingTipTickets\glyphicons-halflings-white.png" />
+    <Content Include="Content\Img\WingTipTickets\glyphicons-halflings.png" />
+    <Content Include="Content\Img\WingTipTickets\icon-bargain.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-eventsguide.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-magnifier.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-season.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-sml-bargain.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-sml-season.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-user.jpg" />
+    <Content Include="Content\Img\WingTipTickets\icon-user.png" />
+    <Content Include="Content\Img\WingTipTickets\logo.jpg" />
+    <Content Include="Content\Img\WingTipTickets\mbanner-01.jpg" />
+    <Content Include="Content\Img\WingTipTickets\micon-magnifier.png" />
+    <Content Include="Content\Img\WingTipTickets\star-half.png" />
+    <Content Include="Content\Img\WingTipTickets\star-off.png" />
+    <Content Include="Content\Img\WingTipTickets\star-on.png" />
+    <Content Include="Content\Img\WingTipTickets\ticketmaestro-logo.jpg" />
+    <Content Include="Content\Img\WingTipTickets\ticketmaestro.jpg" />
+    <Content Include="Content\Img\WingTipTickets\tickets-left-title.jpg" />
+    <Content Include="Content\Img\WingTipTickets\up.png" />
+    <Content Include="Content\Stylesheets\bootstrap-theme.css.map" />
+    <Content Include="Content\Stylesheets\bootstrap.css.map" />
+    <EntityDeploy Include="Core\Contexts\WingTipTicketModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WingTipTicketModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Core\Contexts\WingTipTicketModel.edmx.diagram">
+      <DependentUpon>WingTipTicketModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\AutoProvisioner.pubxml" />
+    <None Include="Properties\PublishProfiles\Deployment-Primary.pubxml" />
+    <None Include="Properties\PublishProfiles\Deployment-Secondary.pubxml" />
+    <Content Include="scripts\powerbi.js" />
+    <Content Include="scripts\powerbi.min.js" />
+    <Content Include="SqlScripts\TrimConcerts.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlScripts\GlobalDelete.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlScripts\LocalDelete.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlScripts\ResetConcertDates.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\City\Index.cshtml" />
+    <Content Include="Views\FindSeats\Index.cshtml" />
+    <Content Include="Views\EventAdministration\Index.cshtml" />
+    <Content Include="Views\Venue\Index.cshtml" />
+    <Content Include="Views\Version\Index.cshtml" />
+    <Content Include="Views\Shared\_ConcertList.cshtml" />
+    <Content Include="Views\Shared\_Account.cshtml" />
+    <Content Include="Views\Shared\_VenueList.cshtml" />
+    <Content Include="Views\Shared\_Banner.cshtml" />
+    <Content Include="Views\Shared\_CityList.cshtml" />
+    <Content Include="Views\Shared\_DateList.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Reports\Upload.cshtml" />
+    <Content Include="scripts\powerbi.js.map" />
+    <None Include="Properties\PublishProfiles\gmt195wttprimary - Web Deploy.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31369</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/WingTipTickets</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.1.9.5\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.1.9.5\build\Microsoft.Azure.DocumentDB.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Azure.DocumentDB.1.9.5\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.1.9.5\build\Microsoft.Azure.DocumentDB.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
